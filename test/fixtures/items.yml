@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  details: MyText
+  value: 1
+  attached_sheet: false
+  is_cash: false
+  campaign_id: 1
+  character_id: 1
+
+two:
+  name: MyString
+  details: MyText
+  value: 1
+  attached_sheet: false
+  is_cash: false
+  campaign_id: 1
+  character_id: 1
