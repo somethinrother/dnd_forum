@@ -5,4 +5,5 @@ class Campaign < ApplicationRecord
   has_many :chapters
   has_many :characters
   has_many :items
+  has_many :notes
 end
