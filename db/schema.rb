@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180216043357) do
+ActiveRecord::Schema.define(version: 20180216063339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,10 +77,12 @@ ActiveRecord::Schema.define(version: 20180216043357) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "user_id"
-    t.integer "campaign_id"
+    t.string "notable_type"
+    t.bigint "notable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id"
   end
 
   create_table "setting_details", force: :cascade do |t|
