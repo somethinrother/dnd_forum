@@ -1,0 +1,2 @@
+module SettingDetailsHelper
+end
