@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  campaign_id: 1
+  name: MyString
+  description: MyText
+  primary_class: MyString
+  secondary_class: MyString
+  tertiary_class: MyString
+  pc: false
+  location: MyString
+  level: 1
+  copper: 1
+  silver: 1
+  gold: 1
+  platinum: 1
+  experience: 1
+
+two:
+  user_id: 1
+  campaign_id: 1
+  name: MyString
+  description: MyText
+  primary_class: MyString
+  secondary_class: MyString
+  tertiary_class: MyString
+  pc: false
+  location: MyString
+  level: 1
+  copper: 1
+  silver: 1
+  gold: 1
+  platinum: 1
+  experience: 1

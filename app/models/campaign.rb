@@ -3,4 +3,5 @@ class Campaign < ApplicationRecord
 
   has_many :setting_details
   has_many :chapters
+  has_many :characters
 end
