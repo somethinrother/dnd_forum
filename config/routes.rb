@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :setting_details, only: [:create, :update, :destroy]
   end
 
+  resources :notes, only: [:create, :update, :destroy]
 
   resources :users, except: :index
 
