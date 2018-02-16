@@ -77,10 +77,11 @@ ActiveRecord::Schema.define(version: 20180216043357) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "user_id"
-    t.integer "campaign_id"
+    t.string "notable_type"
+    t.bigint "notable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["notable_type", "notable_id"], name: "index_notes_on_notable_type_and_notable_id"
   end
 
   create_table "setting_details", force: :cascade do |t|
