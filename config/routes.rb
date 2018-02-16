@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :campaigns do
+    resources :chapters, only: [:create, :update, :destroy]
+
+    resources :characters do
+      resources :blue_books
+      resources :items
+    end
+
+    resources :setting_details, only: [:create, :update, :destroy]
+  end
+
+  resources :notes, only: [:create, :update, :destroy]
+
+  resources :users, except: :index
+
 end
