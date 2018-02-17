@@ -1,6 +1,12 @@
 class CampaignsController < ApplicationController
+  before_action :ensure_logged_in
+
   def index
-    @campaigns = Campaign.all
+    if current_user
+      @campaigns = current_user.campaigns.all
+    else
+      redirect_to login_url
+    end
   end
 
   def show

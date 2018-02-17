@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  # TODO: Is there a better option than EST?
   config.time_zone = 'Eastern Time (US & Canada)'
   around_action :set_time_zone
 
