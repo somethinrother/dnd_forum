@@ -1,5 +1,6 @@
 <h3 class='camapigns-header'>Your Campaigns</h3>
 <%= render partial: "sessions/logout_button" %>
+<%= link_to 'Start a new campaign?', new_campaign_path %>
 
 <ul class='campaigns'>
   <% @campaigns.each do |campaign| %>
