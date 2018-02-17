@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
   before_action :ensure_logged_in
 
   def index
-    @campaigns = current_user.campaigns.all
+    @campaigns = current_user.campaigns
   end
 
   def show
@@ -10,12 +10,32 @@ class CampaignsController < ApplicationController
   end
 
   def new
+    @campaign = Campaign.new
   end
 
   def edit
   end
 
   def create
+    @campaign = Campaign.new
+    @campaign.user = current_user
+    @campaign.title = params[:campaign][:title]
+    @campaign.description = params[:campaign][:description]
+    if params[:campaign][:experience_track] == '1'
+      @campaign.experience_track = 'Slow'
+    elsif params[:campaign][:experience_track] == '2'
+      @campaign.experience_track = 'Medium'
+    elsif params[:campaign][:experience_track] == '3'
+      @campaign.experience_track = 'Fast'
+    end
+
+    if @campaign.save
+      flash[:alert] = 'Camapaign successfully created!'
+      redirect_to campaigns_url
+    else
+      render :new
+      flash[:error] = 'There were errors in your campaign creation'
+    end
   end
 
   def update
