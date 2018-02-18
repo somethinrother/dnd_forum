@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # TODO: Add seeds
 user = User.create!(username: "Zackbert", email: "zberto@gmail.com", password: "password", password_confirmation: "password")
+user2 = User.create!(username: "Gregbert", email: "gberto@gmail.com", password: "password", password_confirmation: "password")
 
 campaign = Campaign.create!(user: user, title: "Wheel of Time", description: "A group of fated adventurers must save the world...")
 
@@ -24,6 +25,6 @@ SettingDetail.create!(campaign: campaign, title: 'Experience Track', description
 Character.create!(user: user, campaign: campaign, name: 'Thomdril Merrilin', description: 'A wandering bard', primary_class: 'Bard', location: "Emond's Field", level: 6, gold: 30)
 
 # PC Character
-Character.create!(user: user, campaign: campaign, name: 'Rand', description: 'A regular boy in the village', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 6)
-Character.create!(user: user, campaign: campaign, name: 'Mat', description: 'A pain in the butt', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 7)
-Character.create!(user: user, campaign: campaign, name: 'Perrin', description: 'Slow to action, but thoughtful', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 3)
+Character.create!(user: user2, campaign: campaign, name: 'Rand', description: 'A regular boy in the village', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 6)
+Character.create!(user: user2, campaign: campaign, name: 'Mat', description: 'A pain in the butt', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 7)
+Character.create!(user: user2, campaign: campaign, name: 'Perrin', description: 'Slow to action, but thoughtful', primary_class: 'Farmer', location: "Emond's Field", level: 1, copper: 3)
