@@ -15,10 +15,13 @@
 
 <!-- TODO: Store this in a partial -->
 <h4>Setting Details</h4>
-<%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
 <% @setting_details.each do |title, details| %>
   <div class='setting-bullet'> <%= title %> - <%= details %> </div>
 <% end %>
+<!-- TODO: Use something other than an a tag -->
+<br>
+<a href='#' class='new-setting-button'>Add Setting Details?</a>
+<%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
 
 <!-- TODO: Store this in a partial -->
 <h4>The Party</h4>
