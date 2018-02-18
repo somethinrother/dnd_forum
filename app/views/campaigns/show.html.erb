@@ -9,9 +9,16 @@
 <!-- For each of these displays, post a message if they're empty -->
 <!-- TODO: Store this in a partial -->
 <h4>Chapters</h4>
-<% @chapters.each do |number, title| %>
+<div class="chapters">
+  <% @chapters.each do |number, title| %>
   <div class='chapter-tab'> <%= number %>. <%= title %> </div>
-<% end %>
+  <% end %>
+</div>
+
+<!-- TODO: wrap this partial so it only displays for a GM -->
+<br>
+<a href='#' class='new-chapter-button'>Add New Chapter?</a>
+<%= render partial: '/chapters/form', locals: { campaign: @campaign, chapter: @chapter } %>
 
 <!-- TODO: Store this in a partial -->
 <h4>Setting Details</h4>
@@ -21,7 +28,7 @@
   <% end %>
 </div>
 
-<!-- TODO: Use something other than an a tag -->
+<!-- TODO: Use something other than an a tag, wrap this partial so it only displays for a GM -->
 <br>
 <a href='#' class='new-setting-button'>Add Setting Details?</a>
 <%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>

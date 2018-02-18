@@ -8,6 +8,7 @@ class CampaignsController < ApplicationController
   def show
     @campaign = Campaign.find(params[:id])
     @chapters = @campaign.chapter_display
+    @chapter = Chapter.new
     @setting_details = @campaign.setting_detail_display
     @setting_detail = SettingDetail.new
     @loot = @campaign.available_loot
