@@ -15,9 +15,12 @@
 
 <!-- TODO: Store this in a partial -->
 <h4>Setting Details</h4>
-<% @setting_details.each do |title, details| %>
-  <div class='setting-bullet'> <%= title %> - <%= details %> </div>
-<% end %>
+<div class='setting-details'>
+  <% @setting_details.each do |title, details| %>
+    <div class='setting-bullet'> <%= title %> - <%= details %> </div>
+  <% end %>
+</div>
+
 <!-- TODO: Use something other than an a tag -->
 <br>
 <a href='#' class='new-setting-button'>Add Setting Details?</a>

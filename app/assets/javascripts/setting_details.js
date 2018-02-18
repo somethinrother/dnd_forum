@@ -18,9 +18,13 @@ document.addEventListener('DOMContentLoaded', function(){
           // Resets the button to an active state if an error occurs
           var button = document.querySelector('.detail-submit');
           button.disabled = false;
-        } else {
+        } else if (responseData.title != '' && responseData.description != '') {
           var div = document.createElement('div');
-          div.innerText = responseData.title + ' - ' + responseData.details
+          var title = responseData.title.charAt(0).toUpperCase() + responseData.title.slice(1);
+          var description = responseData.description.charAt(0).toUpperCase() + responseData.description.slice(1);
+          div.innerText = title + ' - ' + description
+          var detailsList = document.querySelector('.setting-details');
+          detailsList.append(div);
         }
         // Clear out the text field
         $('#new_setting_detail').trigger("reset");
