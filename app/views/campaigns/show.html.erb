@@ -1,2 +1,7 @@
-<h1>Campaigns#show</h1>
-<p>Find me in app/views/campaigns/show.html.erb</p>
+<h3><%= @campaign.title %></h3>
+<div class="edit-button btn">
+  <%= link_to 'Edit Campaign Details', edit_campaign_path %>
+</div>
+<div class="back-button btn">
+  <%= link_to 'Back', root_path %>
+</div>

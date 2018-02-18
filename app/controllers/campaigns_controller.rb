@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
   end
 
   def edit
+    @campaign = Campaign.find(params[:id])
   end
 
   def create
