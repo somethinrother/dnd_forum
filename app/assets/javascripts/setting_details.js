@@ -35,10 +35,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // For hiding and showing the new setting details form
   var button = document.querySelector('.new-setting-button');
-
   button.addEventListener('click', function(e){
+    e.preventDefault();
     e.target.style.display = 'none';
     var form = document.querySelector('#new_setting_detail');
+    var closeButton = document.querySelector('.new-setting-close');
     form.style.display = 'block';
+    closeButton.className = 'new-setting-close';
+  });
+
+  var closeButton = document.querySelector('.new-setting-close');
+  closeButton.addEventListener('click', function(e){
+    e.preventDefault();
+    e.target.className = 'new-setting-close hidden';
+    var form = document.querySelector('#new_setting_detail');
+    var button = document.querySelector('.new-setting-button');
+    form.style.display = 'none';
+    button.style.display = 'block';
   });
 });
