@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   # user session routes
   get 'login' => 'sessions#new', :as => :login
-  get 'logout', to: 'sessions#destroy', as: :logout
+  delete 'logout', to: 'sessions#destroy', as: :logout
   resources :sessions, only: [:create]
 
   # user routes
