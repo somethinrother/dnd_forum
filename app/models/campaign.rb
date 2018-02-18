@@ -40,7 +40,6 @@ class Campaign < ApplicationRecord
     all_loot
   end
 
-  # TODO: Migration to eliminate pc boolean on character model
   def gm_characters
     gm_characters = []
     characters.each do |character|

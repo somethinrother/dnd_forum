@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# TODO: Add seeds
 user = User.create!(username: "Zackbert", email: "zberto@gmail.com", password: "password", password_confirmation: "password")
 user2 = User.create!(username: "Gregbert", email: "gberto@gmail.com", password: "password", password_confirmation: "password")
 

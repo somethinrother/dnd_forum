@@ -15,10 +15,11 @@
   <% end %>
 </div>
 
-<!-- TODO: wrap this partial so it only displays for a GM -->
-<br>
-<a href='#' class='new-chapter-button'>Add New Chapter?</a>
-<%= render partial: '/chapters/form', locals: { campaign: @campaign, chapter: @chapter } %>
+<% if current_user == @campaign.user %>
+  <br>
+  <a href='#' class='new-chapter-button'>Add New Chapter?</a>
+  <%= render partial: '/chapters/form', locals: { campaign: @campaign, chapter: @chapter } %>
+<% end %>
 
 <!-- TODO: Store this in a partial -->
 <h4>Setting Details</h4>
@@ -28,10 +29,11 @@
   <% end %>
 </div>
 
-<!-- TODO: Use something other than an a tag, wrap this partial so it only displays for a GM -->
-<br>
-<a href='#' class='new-setting-button'>Add Setting Details?</a>
-<%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
+<% if current_user == @campaign.user %>
+  <br>
+  <a href='#' class='new-setting-button'>Add Setting Details?</a>
+  <%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
+<% end %>
 
 <!-- TODO: Store this in a partial -->
 <h4>The Party</h4>
