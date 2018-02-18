@@ -6,8 +6,14 @@
   </div>
 <% end %>
 
+<!-- TODO: Store this in a partial -->
 <h4>Chapters</h4>
-
 <% @chapters.each do |number, title| %>
   <div class='chapter-tab'> <%= number %>. <%= title %> </div>
+<% end %>
+
+<!-- TODO: Store this in a partial -->
+<h4>Setting Details</h4>
+<% @setting_details.each do |title, details| %>
+  <div class='setting-bullet'> <%= title %> - <%= details %> </div>
 <% end %>

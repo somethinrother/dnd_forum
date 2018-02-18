@@ -17,4 +17,12 @@ class Campaign < ApplicationRecord
     end
     numbered_chapters
   end
+
+  def setting_detail_display
+    setting_details_full = {}
+    setting_details.each do |detail|
+      setting_details_full[detail.title.capitalize] = detail.description.capitalize
+    end
+    setting_details_full
+  end
 end
