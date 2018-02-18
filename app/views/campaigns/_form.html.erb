@@ -1,0 +1,21 @@
+<%= form_for @campaign do |f| %>
+  <div class='field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class='field'>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class='field'>
+    <%= f.radio_button :experience_track, 1 %>
+    <%= label :experience_track_slow, 'Slow' %>
+    <%= f.radio_button :experience_track, 2, :checked => true%>
+    <%= label :experience_track_medium, 'Medium' %>
+    <%= f.radio_button :experience_track, 3 %>
+    <%= label :experience_track_fast, 'Fast' %>
+  </div>
+
+  <%= f.submit 'Submit Form' %>
+<% end %>

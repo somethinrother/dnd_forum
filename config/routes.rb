@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   resources :notes, only: [:create, :update, :destroy]
 
   # user session routes
-  resources :sessions, only: :create
   get 'login' => 'sessions#new', :as => :login
-  delete 'logout' => 'sessions#destroy', :as => :logout
+  delete 'logout', to: 'sessions#destroy', as: :logout
+  resources :sessions, only: [:create]
 
   # user routes
   resources :users, except: :index

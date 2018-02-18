@@ -1,0 +1,23 @@
+<!-- TODO: Render this on the character show page -->
+<%= form_for @item, url: new_campaign_character_item_path(@campaign, @character) do |f| %>
+  <div class='field'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class='field'>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+  <div class='field'>
+    <%= f.label :value %>
+    <%= f.number_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label "Is it just money?" %> <br />
+    <%= f.check_box :is_cash %> <br />
+</div>
+
+  <%= f.submit 'Submit', class: "item-submit" %>
+<% end %>
+
+<a href="#" class='new-item-close hidden'>Close</a>

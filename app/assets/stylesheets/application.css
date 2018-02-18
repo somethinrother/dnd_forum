@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.hidden {
+  display: none;
+}
+
+#new_setting_detail {
+  display: none;
+}
+
+#new_chapter {
+  display: none;
+}
+
+/*
+#new_item {
+  display: none;
+}
+*/
