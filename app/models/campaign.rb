@@ -30,7 +30,6 @@ class Campaign < ApplicationRecord
     all_loot = []
     items.each do |item|
       item_data = {}
-      # TODO: Migration to change item value to a float (hundredths account for copper)
       item_data['item'] = item.name
       item_data['gold piece value'] = item.value
       if !item.is_cash

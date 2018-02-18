@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218224014) do
+ActiveRecord::Schema.define(version: 20180218235056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20180218224014) do
     t.string "primary_class"
     t.string "secondary_class"
     t.string "tertiary_class"
-    t.boolean "pc"
     t.string "location"
     t.integer "level"
     t.integer "copper"
