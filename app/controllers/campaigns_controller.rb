@@ -11,7 +11,6 @@ class CampaignsController < ApplicationController
     @chapter = Chapter.new
     @setting_details = @campaign.setting_detail_display
     @setting_detail = SettingDetail.new
-    @loot = @campaign.available_loot
     @player_characters = @campaign.player_characters
     @gm_characters = @campaign.gm_characters
   end

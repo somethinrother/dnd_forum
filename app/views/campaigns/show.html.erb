@@ -60,6 +60,7 @@
     </div>
     <% end %>
   <% end %>
+  <br>
 <% end %>
 
 <!-- TODO: Store this in a partial -->
@@ -69,17 +70,4 @@
   <!-- TODO: Make this a link to the character's show page -->
   Character: <%= character.name.titleize %>
 </div>
-<% end %>
-
-<!-- TODO: Store this in a partial -->
-<h4>Available Loot</h4>
-<% @loot.each do |item| %>
-  <h5><%= item['item'].titleize %></h5>
-  <% item.each do |title, detail| %>
-    <% unless title == 'item' %>
-      <div class="item-field">
-        <%= title %>: <%= detail %>
-      </div>
-    <% end %>
-  <% end %>
 <% end %>
