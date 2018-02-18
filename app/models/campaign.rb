@@ -8,6 +8,7 @@ class Campaign < ApplicationRecord
   has_many :notes, as: :notable
 
   # Custom Methods
+  # TODO: Fix this. Just rely on object attributes
   def chapter_display
     numbered_chapters = {}
     chapter_number = 1
@@ -18,6 +19,7 @@ class Campaign < ApplicationRecord
     numbered_chapters
   end
 
+  # TODO: Fix this. Just rely on object attributes
   def setting_detail_display
     setting_details_full = {}
     setting_details.each do |detail|
@@ -26,11 +28,13 @@ class Campaign < ApplicationRecord
     setting_details_full
   end
 
+  # TODO: Fix this. Just rely on object attributes
   def available_loot
     all_loot = []
     items.each do |item|
       item_data = {}
       # TODO: Migration to change item value to a float (hundredths account for copper)
+      # TODO: Make these not display if an item has a character ID
       item_data['item'] = item.name
       item_data['gold piece value'] = item.value
       if !item.is_cash
@@ -39,5 +43,26 @@ class Campaign < ApplicationRecord
       all_loot << item_data
     end
     all_loot
+  end
+
+  # TODO: Migration to eliminate pc boolean on character model
+  def gm_characters
+    gm_characters = []
+    characters.each do |character|
+      if character.user == character.campaign.user
+        gm_characters << character
+      end
+    end
+    gm_characters
+  end
+
+  def player_characters
+    player_characters = []
+    characters.each do |character|
+      if character.user != character.campaign.user
+        player_characters << character
+      end
+    end
+    player_characters
   end
 end

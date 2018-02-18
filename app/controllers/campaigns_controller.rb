@@ -10,6 +10,8 @@ class CampaignsController < ApplicationController
     @chapters = @campaign.chapter_display
     @setting_details = @campaign.setting_detail_display
     @loot = @campaign.available_loot
+    @player_characters = @campaign.player_characters
+    @gm_characters = @campaign.gm_characters
   end
 
   def new
