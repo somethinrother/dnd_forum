@@ -15,6 +15,7 @@
 
 <!-- TODO: Store this in a partial -->
 <h4>Setting Details</h4>
+<%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
 <% @setting_details.each do |title, details| %>
   <div class='setting-bullet'> <%= title %> - <%= details %> </div>
 <% end %>
