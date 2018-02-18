@@ -13,6 +13,8 @@
       <%= content_tag :div, value, class: "flash #{key}" %>
     <% end %>
 
+    <%= render partial: 'layouts/navigation' %>
+
     <%= yield %>
   </body>
 </html>
