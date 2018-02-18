@@ -7,3 +7,7 @@
 <% end %>
 
 <h4>Chapters</h4>
+
+<% @campaign.chapter_display.each do |number, title| %>
+  <span> <%= number %>. <%= title %> </span>
+<% end %>

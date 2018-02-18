@@ -9,11 +9,10 @@ class Campaign < ApplicationRecord
 
   # Custom Methods
   def chapter_display
-    numbered_chapters = []
+    numbered_chapters = {}
     chapter_number = 1
-    chapters.map do |chapter|
-      chapter = {chapter_number => chapter.title}
-      numbered_chapters << chapter
+    chapters.each do |chapter|
+      numbered_chapters[chapter_number.to_s] = chapter.title
       chapter_number += 1
     end
     numbered_chapters
