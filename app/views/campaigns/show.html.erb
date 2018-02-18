@@ -23,6 +23,7 @@
 <h4>The Party</h4>
 <% @player_characters.each do |character| %>
   <div class="character name">
+    <!-- TODO: Make this a link to the character's show page -->
     Character: <%= character.name.titleize %>
   </div>
   <div class="character username">
@@ -45,6 +46,15 @@
     </div>
     <% end %>
   <% end %>
+<% end %>
+
+<!-- TODO: Store this in a partial -->
+<h4>NPC Roster</h4>
+<% @gm_characters.each do |character| %>
+<div class="character name">
+  <!-- TODO: Make this a link to the character's show page -->
+  Character: <%= character.name.titleize %>
+</div>
 <% end %>
 
 <!-- TODO: Store this in a partial -->
