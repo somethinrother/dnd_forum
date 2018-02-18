@@ -1,7 +1,11 @@
 <h3><%= @campaign.title %></h3>
-<div class="edit-button btn">
-  <%= link_to 'Edit Campaign Details', edit_campaign_path %>
-</div>
+
+<% if current_user == @campaign.user %>
+  <div class="edit-button btn">
+    <%= link_to 'Edit Campaign Details', edit_campaign_path %>
+  </div>
+<% end %>
+
 <div class="back-button btn">
   <%= link_to 'Back', root_path %>
 </div>
