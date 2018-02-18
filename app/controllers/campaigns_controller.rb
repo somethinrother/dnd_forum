@@ -9,6 +9,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @chapters = @campaign.chapter_display
     @setting_details = @campaign.setting_detail_display
+    @loot = @campaign.available_loot
   end
 
   def new
