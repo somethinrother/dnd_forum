@@ -1,8 +1,5 @@
 <%= form_for [campaign, setting_detail] do |f| %>
   <div class='field'>
-    <%= hidden_field_tag 'campaign_id', campaign.id %>
-  </div>
-  <div class='field'>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
@@ -11,5 +8,5 @@
     <%= f.text_field :description %>
   </div>
 
-  <%= f.submit 'Submit', class: "form-submit" %>
+  <%= f.submit 'Submit', class: "detail-submit" %>
 <% end %>
