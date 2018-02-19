@@ -22,18 +22,6 @@
            campaign: @campaign
           }
 %>
-<h4>Setting Details</h4>
-<div class='setting-details'>
-  <% @setting_details.each do |title, details| %>
-    <div class='setting-bullet'> <%= title %> - <%= details %> </div>
-  <% end %>
-</div>
-
-<% if current_user == @campaign.user %>
-  <br>
-  <a href='#' class='new-setting-button'>Add Setting Details?</a>
-  <%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
-<% end %>
 
 <!-- TODO: Store this in a partial -->
 <h4>The Party</h4>
