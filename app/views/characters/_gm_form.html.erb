@@ -1,0 +1,54 @@
+<%= form_for [campaign, character] do |f| %>
+  <div class='field'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class='field'>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class='field'>
+    <%= f.label :primary_class %>
+    <%= f.text_field :primary_class %>
+  </div>
+  <div class='field'>
+    <%= f.label :secondary_class %>
+    <%= f.text_field :secondary_class %>
+  </div>
+  <div class='field'>
+    <%= f.label :tertiary_class %>
+    <%= f.text_field :tertiary_class %>
+  </div>
+  <div class='field'>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div class='field'>
+    <%= f.label :level %>
+    <%= f.number_field :level %>
+  </div>
+  <div class='field'>
+    <%= f.label :copper %>
+    <%= f.number_field :copper %>
+  </div>
+  <div class='field'>
+    <%= f.label :silver %>
+    <%= f.number_field :silver %>
+  </div>
+  <div class='field'>
+    <%= f.label :gold %>
+    <%= f.number_field :gold %>
+  </div>
+  <div class='field'>
+    <%= f.label :platinum %>
+    <%= f.number_field :platinum %>
+  </div>
+  <div class='field'>
+    <%= f.label :experience %>
+    <%= f.number_field :experience %>
+  </div>
+
+  <%= f.submit 'Submit', class: "character-submit" %>
+<% end %>
+
+<a href="#" class='new-character-close hidden'>Close</a>
