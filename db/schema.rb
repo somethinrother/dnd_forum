@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218193645) do
+ActiveRecord::Schema.define(version: 20180218235056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20180218193645) do
     t.string "primary_class"
     t.string "secondary_class"
     t.string "tertiary_class"
-    t.boolean "pc"
     t.string "location"
     t.integer "level"
     t.integer "copper"
@@ -64,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180218193645) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "details"
-    t.integer "value"
+    t.float "value"
     t.boolean "attached_sheet", default: false
     t.boolean "is_cash", default: false
     t.integer "campaign_id"

@@ -5,15 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# TODO: Add seeds
 user = User.create!(username: "Zackbert", email: "zberto@gmail.com", password: "password", password_confirmation: "password")
 user2 = User.create!(username: "Gregbert", email: "gberto@gmail.com", password: "password", password_confirmation: "password")
 
 campaign = Campaign.create!(user: user, title: "Wheel of Time", description: "A group of fated adventurers must save the world...")
 
 # Loot
-Item.create!(name: 'sword', details: 'Long, sharp, shiny', value: 100, campaign: campaign)
-Item.create!(name: 'shield', details: 'Round, hard, not shiny', value: 30, campaign: campaign)
+Item.create!(name: 'sword', details: 'Long, sharp, shiny', value: 100.00, campaign: campaign)
+Item.create!(name: 'shield', details: 'Round, hard, not shiny', value: 30.00, campaign: campaign)
 
 chapter_eye = Chapter.create!(campaign: campaign, title: 'The Eye of The World', description: 'The adventure begins')
 chapter_hunt = Chapter.create!(campaign: campaign, title: 'The Great Hunt', description: 'The adventure continues!')

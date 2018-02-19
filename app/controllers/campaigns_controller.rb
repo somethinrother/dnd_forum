@@ -28,14 +28,6 @@ class CampaignsController < ApplicationController
     @campaign.user = current_user
     @campaign.title = params[:campaign][:title]
     @campaign.description = params[:campaign][:description]
-    if params[:campaign][:experience_track] == '1'
-      @campaign.experience_track = 'Slow'
-    elsif params[:campaign][:experience_track] == '2'
-      @campaign.experience_track = 'Medium'
-    elsif params[:campaign][:experience_track] == '3'
-      @campaign.experience_track = 'Fast'
-    end
-
     if @campaign.save
       flash[:alert] = 'Camapaign successfully created!'
       redirect_to campaigns_url
@@ -46,6 +38,17 @@ class CampaignsController < ApplicationController
   end
 
   def update
+    @campaign = Campaign.find(params[:id])
+    @campaign.user = current_user
+    @campaign.title = params[:campaign][:title]
+    @campaign.description = params[:campaign][:description]
+    if @campaign.save
+      flash[:alert] = 'Camapaign successfully updated!'
+      redirect_to campaigns_url
+    else
+      render :edit
+      flash[:error] = 'There were errors in your campaign update'
+    end
   end
 
   def destroy

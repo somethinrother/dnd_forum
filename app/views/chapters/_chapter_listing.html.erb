@@ -1,0 +1,12 @@
+<h4>Chapters</h4>
+<div class="chapters">
+  <% chapters.each do |number, title| %>
+  <div class='chapter-tab'> <%= number %>. <%= title %> </div>
+  <% end %>
+</div>
+
+<% if current_user == campaign.user %>
+  <br>
+  <a href='#' class='new-chapter-button'>Add New Chapter?</a>
+  <%= render partial: '/chapters/form', locals: { campaign: campaign, chapter: chapter } %>
+<% end %>
