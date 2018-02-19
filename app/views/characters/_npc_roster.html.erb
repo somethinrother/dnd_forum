@@ -5,4 +5,6 @@
   </div>
 <% end %>
 
-<%= link_to 'Create new character?', new_campaign_character_path(@campaign) %>
+<% if current_user == campaign.user %>
+  <%= link_to 'Create new character?', new_campaign_character_path(@campaign) %>
+<% end %>
