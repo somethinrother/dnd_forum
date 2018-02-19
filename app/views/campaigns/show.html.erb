@@ -6,10 +6,22 @@
   </div>
 <% end %>
 
-<!-- For each of these displays, post a message if they're empty -->
-<%= render partial: 'chapters/chapter_listing', locals: { campaign: @campaign, chapter: @chapter, chapters: @chapters } %>
+<!-- TODO: For each of these displays, post a message if they're empty -->
+<%= render partial: 'chapters/chapter_listing',
+  locals: {
+           campaign: @campaign,
+           chapter: @chapter,
+           chapters: @chapters
+          }
+%>
 
-<!-- TODO: Store this in a partial -->
+<%= render partial: 'setting_details/setting_detail_listing',
+  locals: {
+           setting_details: @setting_details,
+           setting_detail: @setting_detail,
+           campaign: @campaign
+          }
+%>
 <h4>Setting Details</h4>
 <div class='setting-details'>
   <% @setting_details.each do |title, details| %>
