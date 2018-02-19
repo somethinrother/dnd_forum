@@ -1,0 +1,28 @@
+<h4>The Party</h4>
+<% @player_characters.each do |character| %>
+  <div class="character name">
+    <!-- TODO: Make this a link to the character's show page -->
+    Character: <%= character.name.titleize %>
+  </div>
+  <div class="character username">
+    Player: <%= character.user.username.capitalize %>
+  </div>
+  <div class="character level">
+    Level: <%= character.level %>
+  </div>
+  <div class="character class">
+    Primary Class: <%= character.primary_class %>
+  </div>
+
+  <% if character.secondary_class != nil %>
+  <div class="character secondary_class">
+    Secondary Class: <%= character.secondary_class %>
+  </div>
+    <% if character.tertiary_class != nil %>
+    <div class="character tertiary_class">
+      Tertiary Class: <%= character.tertiary_class %>
+    </div>
+    <% end %>
+  <% end %>
+  <br>
+<% end %>
