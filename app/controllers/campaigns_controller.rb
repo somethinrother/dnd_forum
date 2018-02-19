@@ -52,5 +52,6 @@ class CampaignsController < ApplicationController
   end
 
   def destroy
+    # TODO: Fill this in and add functionality
   end
 end

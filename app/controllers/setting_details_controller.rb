@@ -17,8 +17,10 @@ class SettingDetailsController < ApplicationController
   end
 
   def update
+    # TODO: Fill this in and add functionality
   end
 
   def destroy
+    # TODO: Fill this in and add functionality
   end
 end
