@@ -1,7 +1,6 @@
 <h4>NPC Roster</h4>
-<% @gm_characters.each do |character| %>
+<% gm_characters.each do |character| %>
 <div class="character name">
-  <!-- TODO: Make this a link to the character's show page -->
-  Character: <%= character.name.titleize %>
+  <%= link_to character.name.titleize, campaign_character_path(character.campaign, character) %>
 </div>
 <% end %>

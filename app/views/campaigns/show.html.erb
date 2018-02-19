@@ -26,7 +26,17 @@
 %>
 
 <!-- All the player characters for the campaign -->
-<%= render partial: 'characters/party', locals: {player_characters: @player_characters} %>
+<%= render partial: 'characters/party',
+  locals: {
+           player_characters: @player_characters,
+           campaign: @campaign
+          }
+%>
 
 <!-- All the npc characters for the campaign -->
-<%= render partial: 'characters/npc_roster', locals: {gm_characters: @gm_characters} %>
+<%= render partial: 'characters/npc_roster',
+  locals: {
+           gm_characters: @gm_characters,
+           campaign: @campaign
+          }
+%>
