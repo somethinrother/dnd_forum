@@ -44,7 +44,7 @@ class CampaignsController < ApplicationController
     @campaign.description = params[:campaign][:description]
     if @campaign.save
       flash[:alert] = 'Camapaign successfully updated!'
-      redirect_to campaigns_url
+      redirect_to campaign_url(@campaign)
     else
       render :edit
       flash[:error] = 'There were errors in your campaign update'
