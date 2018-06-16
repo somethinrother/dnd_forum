@@ -15,17 +15,5 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Max: 77
 
-# Offense count: 8
-# Configuration parameters: CountComments.
-Metrics/MethodLength:
-  Max: 22
-
-# Offense count: 42
 Style/Documentation:
   Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/models/campaign.rb'
