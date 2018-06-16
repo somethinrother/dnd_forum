@@ -20,14 +20,6 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 22
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'test/test_helper.rb'
-
 # Offense count: 42
 Style/Documentation:
   Enabled: false
