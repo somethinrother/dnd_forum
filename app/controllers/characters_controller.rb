@@ -1,17 +1,16 @@
-class CharactersController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+class CharactersController < ApplicationController
+  def index; end
+
+  def show; end
 
   def new
     @campaign = Campaign.find(params[:campaign_id])
     @character = Character.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @character = Character.new

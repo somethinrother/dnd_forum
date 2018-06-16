@@ -1,15 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'campaigns#index'
 
   # campaigns routes
   resources :campaigns do
-
     # chapters routes
-    resources :chapters, only: [:create, :update, :destroy]
+    resources :chapters, only: %i[create update destroy]
 
     # characters routes
     resources :characters do
-
       # blue_books routes
       resources :blue_books
 
@@ -18,11 +18,11 @@ Rails.application.routes.draw do
     end
 
     # setting_details routes
-    resources :setting_details, only: [:create, :update, :destroy]
+    resources :setting_details, only: %i[create update destroy]
   end
 
   # notes routes
-  resources :notes, only: [:create, :update, :destroy]
+  resources :notes, only: %i[create update destroy]
 
   # user session routes
   get 'login' => 'sessions#new', :as => :login
