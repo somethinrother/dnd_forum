@@ -16,8 +16,8 @@ campaign = Campaign.create!(user: user, title: 'Wheel of Time', description: 'A 
 Item.create!(name: 'sword', details: 'Long, sharp, shiny', value: 100.00, campaign: campaign)
 Item.create!(name: 'shield', details: 'Round, hard, not shiny', value: 30.00, campaign: campaign)
 
-chapter_eye = Chapter.create!(campaign: campaign, title: 'The Eye of The World', description: 'The adventure begins')
-chapter_hunt = Chapter.create!(campaign: campaign, title: 'The Great Hunt', description: 'The adventure continues!')
+Chapter.create!(campaign: campaign, title: 'The Eye of The World', description: 'The adventure begins')
+Chapter.create!(campaign: campaign, title: 'The Great Hunt', description: 'The adventure continues!')
 
 SettingDetail.create!(campaign: campaign, title: 'Location', description: 'Two Rivers')
 SettingDetail.create!(campaign: campaign, title: 'Experience Track', description: 'Fast')
