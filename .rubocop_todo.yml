@@ -23,15 +23,9 @@ Metrics/MethodLength:
 # Offense count: 42
 Style/Documentation:
   Enabled: false
-  
+
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:
   Exclude:
     - 'app/models/campaign.rb'
-
-# Offense count: 40
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Metrics/LineLength:
-  Max: 186
