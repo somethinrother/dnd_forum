@@ -2,7 +2,6 @@
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # TODO: Is there a better option than EST?
   config.time_zone = 'Eastern Time (US & Canada)'
   around_action :set_time_zone
 
@@ -11,11 +10,8 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:user_id] && User.find(session[:user_id])
 
-    if session[:user_id]
-      User.find(session[:user_id])
-    else
-      return nil
-    end
+    return unless session[:user_id]
+    User.find(session[:user_id])
   end
 
   def logged_in?
@@ -25,10 +21,9 @@ class ApplicationController < ActionController::Base
   private
 
   def ensure_logged_in
-    unless current_user
-      flash[:alert] = 'Please log in first.'
-      redirect_to login_url
-    end
+    return unless current_user
+    flash[:alert] = 'Please log in first.'
+    redirect_to login_url
   end
 
   def set_time_zone
