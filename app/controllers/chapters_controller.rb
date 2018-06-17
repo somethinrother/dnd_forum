@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ChaptersController < ApplicationController
+  # rubocop:disable Metrics/MethodLength
   def create
     @campaign = Campaign.find(params[:campaign_id])
     @chapter = Chapter.new
@@ -17,6 +18,8 @@ class ChaptersController < ApplicationController
       render json: { errors: @chapter.errors }
     end
   end
+
+  # rubocop:enable Metrics/MethodLength
 
   def update
     # TODO: Fill this in and add functionality

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SettingDetailsController < ApplicationController
+  # rubocop:disable Metrics/MethodLength
   def create
     @campaign = Campaign.find(params[:campaign_id])
     @setting_detail = SettingDetail.new
@@ -17,6 +18,7 @@ class SettingDetailsController < ApplicationController
       render json: { errors: @setting_detail.errors }
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def update
     # TODO: Fill this in and add functionality

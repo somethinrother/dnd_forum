@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CreateCharacters < ActiveRecord::Migration[5.1]
+  # rubocop:disable Metrics/MethodLength
   def change
     create_table :characters do |t|
       t.integer :user_id
@@ -21,5 +22,6 @@ class CreateCharacters < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end

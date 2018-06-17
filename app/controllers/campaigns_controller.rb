@@ -25,8 +25,12 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create
-    new_campaign_attributes
+    @campaign = Campaign.new
+    @campaign.user = current_user
+    @campaign.title = params[:campaign][:title]
+    @campaign.description = params[:campaign][:description]
     if @campaign.save
       flash[:alert] = 'Camapaign successfully created!'
       redirect_to campaigns_url
@@ -37,7 +41,10 @@ class CampaignsController < ApplicationController
   end
 
   def update
-    update_campiagn_attributes
+    @campaign = Campaign.find(params[:id])
+    @campaign.user = current_user
+    @campaign.title = params[:campaign][:title]
+    @campaign.description = params[:campaign][:description]
     if @campaign.save
       flash[:alert] = 'Camapaign successfully updated!'
       redirect_to campaign_url(@campaign)
@@ -47,23 +54,9 @@ class CampaignsController < ApplicationController
     end
   end
 
+  # rubocop:enable Metrics/MethodLength
+
   def destroy
     # TODO: Fill this in and add functionality
-  end
-
-  private
-
-  def new_campaign_attributes
-    @campaign = Campaign.new
-    @campaign.user = current_user
-    @campaign.title = params[:campaign][:title]
-    @campaign.description = params[:campaign][:description]
-  end
-
-  def update_campiagn_attributes
-    @campaign = Campaign.find(params[:id])
-    @campaign.user = current_user
-    @campaign.title = params[:campaign][:title]
-    @campaign.description = params[:campaign][:description]
   end
 end

@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:user_id] && User.find(session[:user_id])
 
-    return unless session[:user_id]
-    User.find(session[:user_id])
+    User.find(session[:user_id]) if session[:user_id]
   end
 
   def logged_in?
@@ -21,7 +20,7 @@ class ApplicationController < ActionController::Base
   private
 
   def ensure_logged_in
-    return unless current_user
+    return true if current_user
     flash[:alert] = 'Please log in first.'
     redirect_to login_url
   end

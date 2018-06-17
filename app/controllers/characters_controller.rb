@@ -12,6 +12,7 @@ class CharactersController < ApplicationController
 
   def edit; end
 
+  # rubocop:disable Metrics/MethodLength
   def create
     @character = Character.new
     @character.user_id = current_user.id
@@ -36,6 +37,7 @@ class CharactersController < ApplicationController
       flash[:error] = 'There were errors in your character creation'
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def update
     # TODO: Fill this in and add functionality
