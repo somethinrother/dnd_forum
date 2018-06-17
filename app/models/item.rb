@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Item < ApplicationRecord
   belongs_to :campaign
   belongs_to :character, optional: true

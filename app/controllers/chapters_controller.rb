@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChaptersController < ApplicationController
   def create
     @campaign = Campaign.find(params[:campaign_id])
@@ -8,11 +10,11 @@ class ChaptersController < ApplicationController
 
     if @chapter.save
       respond_to do |format|
-        format.html {redirect_to campaign_path(@campaign)}
-        format.json {render json: @chapter}
+        format.html { redirect_to campaign_path(@campaign) }
+        format.json { render json: @chapter }
       end
     else
-      render json: {:errors => @chapter.errors}
+      render json: { errors: @chapter.errors }
     end
   end
 

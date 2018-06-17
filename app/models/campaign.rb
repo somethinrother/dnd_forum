@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Campaign < ApplicationRecord
   belongs_to :user
 
@@ -21,7 +23,8 @@ class Campaign < ApplicationRecord
   def setting_detail_display
     setting_details_full = {}
     setting_details.each do |detail|
-      setting_details_full[detail.title.capitalize] = detail.description.capitalize
+      detail = detail.title.capitalize
+      setting_details_full[detail] = detail
     end
     setting_details_full
   end
@@ -32,9 +35,7 @@ class Campaign < ApplicationRecord
       item_data = {}
       item_data['item'] = item.name
       item_data['gold piece value'] = item.value
-      if !item.is_cash
-        item_data['details'] = item.details
-      end
+      item_data['details'] = item.details unless item.is_cash
       all_loot << item_data
     end
     all_loot
@@ -43,9 +44,7 @@ class Campaign < ApplicationRecord
   def gm_characters
     gm_characters = []
     characters.each do |character|
-      if character.user == character.campaign.user
-        gm_characters << character
-      end
+      gm_characters << character if character.user == character.campaign.user
     end
     gm_characters
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @user = current_user
@@ -11,6 +13,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  # rubocop:disable Metrics/MethodLength
   def update
     @user = current_user
     @user.email = params[:user][:email]
@@ -44,6 +47,7 @@ class UsersController < ApplicationController
       flash[:error] = 'There were errors in your account creation'
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   def destroy
     # TODO: Fill this in and add functionality

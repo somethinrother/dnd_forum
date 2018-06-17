@@ -1,18 +1,19 @@
-class CharactersController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+class CharactersController < ApplicationController
+  def index; end
+
+  def show; end
 
   def new
     @campaign = Campaign.find(params[:campaign_id])
     @character = Character.new
   end
 
-  def edit
-  end
+  def edit; end
 
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def create
     @character = Character.new
     @character.user_id = current_user.id
@@ -37,6 +38,8 @@ class CharactersController < ApplicationController
       flash[:error] = 'There were errors in your character creation'
     end
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 
   def update
     # TODO: Fill this in and add functionality
