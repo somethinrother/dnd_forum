@@ -6,14 +6,19 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 9
 Metrics/AbcSize:
-  Max: 51
+  Max: 25
 
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 77
+  Exclude:
+    - db/schema.rb
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 13
+
 
 Style/Documentation:
   Enabled: false

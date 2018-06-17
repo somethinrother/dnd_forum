@@ -25,7 +25,6 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
   end
 
-  # rubocop:disable Metrics/MethodLength
   def create
     @campaign = Campaign.new
     @campaign.user = current_user
@@ -53,8 +52,6 @@ class CampaignsController < ApplicationController
       flash[:error] = 'There were errors in your campaign update'
     end
   end
-
-  # rubocop:enable Metrics/MethodLength
 
   def destroy
     # TODO: Fill this in and add functionality

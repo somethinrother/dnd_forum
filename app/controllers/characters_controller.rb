@@ -13,6 +13,7 @@ class CharactersController < ApplicationController
   def edit; end
 
   # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def create
     @character = Character.new
     @character.user_id = current_user.id
@@ -38,6 +39,7 @@ class CharactersController < ApplicationController
     end
   end
   # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 
   def update
     # TODO: Fill this in and add functionality
