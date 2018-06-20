@@ -1,2 +1,5 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<h3>Edit your character!</h3>
+
+<%= render partial: 'gm_form', locals: { campaign: @campaign, character: @character } %>
+
+<%= link_to "Back to #{@campaign.title}", campaign_path(@campaign) %>

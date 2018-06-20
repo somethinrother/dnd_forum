@@ -1,2 +1,10 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<h1> <%= @character.name %>'s Profile </h1>
+
+<% @character.attributes.each do |key, value| %>
+  <% unless ['id', 'user_id', 'campaign_id', 'created_at', 'updated_at'].include?(key) || value.nil? %>
+    <p><%= key.titleize %>: <%= value %></p>
+  <% end %>
+<% end %>
+
+<%= link_to 'edit', edit_campaign_character_path(@character) %>
+<%= link_to "Back to #{@campaign.title}", campaign_path(@campaign) %>

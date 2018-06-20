@@ -1,3 +1,5 @@
 <h3>Make a new character!</h3>
 
 <%= render partial: 'gm_form', locals: { campaign: @campaign, character: @character } %>
+
+<%= link_to "Back to #{@campaign.title}", campaign_path(@campaign) %>
