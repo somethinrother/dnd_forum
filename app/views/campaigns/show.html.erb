@@ -1,13 +1,7 @@
-<div class='title-box'>
-  <span class='header campaign-title'><%= @campaign.title %></span>
-  <span class='header campaign-description'> <%= link_to 'Campaign Details', campaign_setting_details_path(@campaign) %> </span>
+<span class='header campaign-title'><%= @campaign.title %></span>
+<div class='description-box'>
+  <span class='header campaign-description'><%= link_to 'Campaign Details', campaign_setting_details_path(@campaign) %></span>
 </div>
-
-<% if current_user == @campaign.user %>
-  <div class='edit-button btn'>
-    <%= link_to 'Edit Campaign Details', edit_campaign_path %>
-  </div>
-<% end %>
 
 <!-- TODO: For each of these displays, post a message if they're empty -->
 <!-- All the chapters for the campaign -->
