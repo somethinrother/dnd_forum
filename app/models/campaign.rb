@@ -23,8 +23,8 @@ class Campaign < ApplicationRecord
   def setting_detail_display
     setting_details_full = {}
     setting_details.each do |detail|
-      detail = detail.title.capitalize
-      setting_details_full[detail] = detail
+      title = detail.title.capitalize
+      setting_details_full[title] = detail.description
     end
     setting_details_full
   end

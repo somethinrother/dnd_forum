@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
 
     # setting_details routes
-    resources :setting_details, only: %i[create update destroy]
+    resources :setting_details, only: %i[index create update destroy]
   end
 
   # notes routes

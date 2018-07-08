@@ -1,10 +1,7 @@
-<h3><%= @campaign.title %></h3>
-
-<% if current_user == @campaign.user %>
-  <div class="edit-button btn">
-    <%= link_to 'Edit Campaign Details', edit_campaign_path %>
-  </div>
-<% end %>
+<span class='header campaign-title'><%= @campaign.title %></span>
+<div class='description-box'>
+  <span class='header campaign-description'><%= link_to 'Campaign Details', campaign_setting_details_path(@campaign) %></span>
+</div>
 
 <!-- TODO: For each of these displays, post a message if they're empty -->
 <!-- All the chapters for the campaign -->
@@ -13,15 +10,6 @@
            campaign: @campaign,
            chapter: @chapter,
            chapters: @chapters
-          }
-%>
-
-<!-- All the setting details for the campaign -->
-<%= render partial: 'setting_details/setting_detail_listing',
-  locals: {
-           setting_details: @setting_details,
-           setting_detail: @setting_detail,
-           campaign: @campaign
           }
 %>
 

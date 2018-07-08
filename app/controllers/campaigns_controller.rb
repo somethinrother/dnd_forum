@@ -11,8 +11,6 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @chapters = @campaign.chapter_display
     @chapter = Chapter.new
-    @setting_details = @campaign.setting_detail_display
-    @setting_detail = SettingDetail.new
     @player_characters = @campaign.player_characters
     @gm_characters = @campaign.gm_characters
   end

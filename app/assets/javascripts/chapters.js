@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
           chaptersList.append(div);
         }
         // Clear out the text field
-        $('#new_chapter').trigger("reset");
+        $('#new_chapter').trigger('reset');
 
         var button = document.querySelector('.chapter-submit');
         button.disabled = false;
@@ -40,22 +40,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // For hiding and showing the new setting details form
   var button = document.querySelector('.new-chapter-button');
-  button.addEventListener('click', function(e){
-    e.preventDefault();
-    e.target.style.display = 'none';
-    var form = document.querySelector('#new_chapter');
-    var closeButton = document.querySelector('.new-chapter-close');
-    form.style.display = 'block';
-    closeButton.className = 'new-chapter-close';
-  });
+  if (button) {
+    button.addEventListener('click', function(e){
+      e.preventDefault();
+      e.target.style.display = 'none';
+      var form = document.querySelector('#new_chapter');
+      var closeButton = document.querySelector('.new-chapter-close');
+      form.style.display = 'block';
+      closeButton.className = 'new-chapter-close';
+    });
+  }
 
   var closeButton = document.querySelector('.new-chapter-close');
-  closeButton.addEventListener('click', function(e){
-    e.preventDefault();
-    e.target.className = 'new-chapter-close hidden';
-    var form = document.querySelector('#new_chapter');
-    var button = document.querySelector('.new-chapter-button');
-    form.style.display = 'none';
-    button.style.display = 'block';
-  });
+  if (button) {
+    closeButton.addEventListener('click', function(e){
+      e.preventDefault();
+      e.target.className = 'new-chapter-close hidden';
+      var form = document.querySelector('#new_chapter');
+      var button = document.querySelector('.new-chapter-button');
+      form.style.display = 'none';
+      button.style.display = 'block';
+    });
+  }
 });

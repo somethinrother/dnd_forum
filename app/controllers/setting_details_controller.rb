@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class SettingDetailsController < ApplicationController
+  def index
+    @campaign = Campaign.find(params[:campaign_id])
+    @setting_details = @campaign.setting_detail_display
+    @setting_detail = SettingDetail.new
+  end
+
   def create
     @campaign = Campaign.find(params[:campaign_id])
     @setting_detail = SettingDetail.new
