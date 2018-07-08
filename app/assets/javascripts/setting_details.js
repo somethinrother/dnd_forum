@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
           detailsList.append(div);
         }
         // Clear out the text field
-        $('#new_setting_detail').trigger("reset");
+        $('#new_setting_detail').trigger('reset');
 
         var button = document.querySelector('.detail-submit');
         button.disabled = false;

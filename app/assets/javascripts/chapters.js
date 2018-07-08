@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
           chaptersList.append(div);
         }
         // Clear out the text field
-        $('#new_chapter').trigger("reset");
+        $('#new_chapter').trigger('reset');
 
         var button = document.querySelector('.chapter-submit');
         button.disabled = false;
