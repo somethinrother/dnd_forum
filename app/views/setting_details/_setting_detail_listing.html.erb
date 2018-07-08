@@ -1,12 +1,15 @@
 <h4>Setting Details</h4>
 <div class='setting-details'>
-  <% @setting_details.each do |title, details| %>
+  <% setting_details.each do |title, details| %>
     <div class='setting-bullet'> <%= title %> - <%= details %> </div>
   <% end %>
 </div>
 
-<% if current_user == @campaign.user %>
+<% if current_user == campaign.user %>
   <br>
   <a href='#' class='new-setting-button'>Add Setting Details?</a>
-  <%= render partial: '/setting_details/form', locals: { campaign: @campaign, setting_detail: @setting_detail } %>
+  <%= render partial: '/setting_details/form', locals: { campaign: campaign, setting_detail: setting_detail } %>
 <% end %>
+
+<div> <%= link_to 'Back', campaign_path(campaign) %> </div>
+<%= console %>
