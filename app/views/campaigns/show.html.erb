@@ -1,7 +1,7 @@
-<nav>
+<div class='title-box'>
   <span class='header campaign-title'><%= @campaign.title %></span>
   <span class='header campaign-description'> <%= link_to 'Campaign Details', campaign_setting_details_path(@campaign) %> </span>
-</nav>
+</div>
 
 <% if current_user == @campaign.user %>
   <div class="edit-button btn">

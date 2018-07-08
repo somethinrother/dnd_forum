@@ -18,6 +18,25 @@
   display: none;
 }
 
+.align-left {
+  position: absolute;
+  left: 15px;
+}
+
+.align-right {
+  position: absolute;
+  right: 15px;
+}
+
+.header {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+}
+
 #new_setting_detail {
   display: none;
 }

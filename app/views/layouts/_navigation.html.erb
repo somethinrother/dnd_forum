@@ -1,5 +1,5 @@
 <!-- Fill in options for navbar here -->
-<nav>
+<nav class='header align-right'>
   <% if current_user %>
     <%= link_to 'Home', root_path, { :class=>'nav-item' } %>
     <%= link_to 'My Account', user_path(current_user), { :class=>'nav-item' }  %>
