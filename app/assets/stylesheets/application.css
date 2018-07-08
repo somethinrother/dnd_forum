@@ -14,9 +14,19 @@
  *= require_self
  */
 
- html {
-   font-family: sans-serif;
- }
+html {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration:  none;
+  font-weight:  700;
+  color: grey;
+}
+
+a:hover {
+  color: lightgray;
+}
 
 .hidden {
   display: none;
