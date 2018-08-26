@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls character actions
 class CharactersController < ApplicationController
   def index; end
 

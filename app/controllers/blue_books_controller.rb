@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls blue book actions
 class BlueBooksController < ApplicationController
   def index; end
 

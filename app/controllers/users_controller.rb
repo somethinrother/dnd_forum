@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls user actions
 class UsersController < ApplicationController
   def show
     @user = current_user

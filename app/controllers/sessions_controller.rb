@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls the creation and removal of session details
 class SessionsController < ApplicationController
   def new; end
 

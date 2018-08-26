@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls campaign actions
 class CampaignsController < ApplicationController
   before_action :ensure_logged_in
 

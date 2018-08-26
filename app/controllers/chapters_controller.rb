@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls chapter actions
 class ChaptersController < ApplicationController
   def create
     @campaign = Campaign.find(params[:campaign_id])

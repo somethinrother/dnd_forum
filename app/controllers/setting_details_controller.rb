@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls setting_details actions
 class SettingDetailsController < ApplicationController
   def index
     @campaign = Campaign.find(params[:campaign_id])
