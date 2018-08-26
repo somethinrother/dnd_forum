@@ -25,12 +25,9 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new
-    @campaign.user = current_user
-    @campaign.title = params[:campaign][:title]
-    @campaign.description = params[:campaign][:description]
+    assign_campaign_details
     if @campaign.save
-      flash[:alert] = 'Camapaign successfully created!'
+      flash[:alert] = 'Campaign successfully created!'
       redirect_to campaigns_url
     else
       render :new
@@ -39,12 +36,9 @@ class CampaignsController < ApplicationController
   end
 
   def update
-    @campaign = Campaign.find(params[:id])
-    @campaign.user = current_user
-    @campaign.title = params[:campaign][:title]
-    @campaign.description = params[:campaign][:description]
+    assign_campaign_details
     if @campaign.save
-      flash[:alert] = 'Camapaign successfully updated!'
+      flash[:alert] = 'Campaign successfully updated!'
       redirect_to campaign_url(@campaign)
     else
       render :edit
@@ -54,5 +48,14 @@ class CampaignsController < ApplicationController
 
   def destroy
     # TODO: Fill this in and add functionality
+  end
+
+  private
+
+  def assign_campaign_details
+    @campaign = params[:id] ? Campaign.find(params[:id]) : Campaign.new
+    @campaign.user = current_user
+    @campaign.title = params[:campaign][:title]
+    @campaign.description = params[:campaign][:description]
   end
 end
