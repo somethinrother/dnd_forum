@@ -651,3 +651,134 @@ Processing by CampaignsController#index as HTML
 Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-08-26 11:51:44 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CampaignsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering campaigns/index.html.erb within layouts/application
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered campaigns/index.html.erb within layouts/application (17.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered sessions/_logout_button.html.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (4.3ms)
+Completed 200 OK in 243ms (Views: 195.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-26 12:01:36 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmberCli::EmberController#index as HTML
+  Parameters: {"ember_app"=>:frontend}
+  Rendering /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb
+  Rendered /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb (4.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No `ember-cli` executable found for `frontend`.
+
+Install it:
+
+    $ cd /home/zimbar/code_projects/dnd_forum/forge/frontend
+    $ npm install
+
+):
+    1: <%= render_ember_app params[:ember_app] do |head| %>
+    2:   <% head.append do %>
+    3:     <%= csrf_meta_tags %>
+    4:   <% end %>
+  
+app/controllers/application_controller.rb:30:in `block in set_time_zone'
+app/controllers/application_controller.rb:30:in `set_time_zone'
+Started GET "/" for 127.0.0.1 at 2018-08-26 12:02:29 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmberCli::EmberController#index as HTML
+  Parameters: {"ember_app"=>:frontend}
+  Rendering /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb
+  Rendered /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb (3.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No `ember-cli` executable found for `frontend`.
+
+Install it:
+
+    $ cd /home/zimbar/code_projects/dnd_forum/forge/frontend
+    $ npm install
+
+):
+    1: <%= render_ember_app params[:ember_app] do |head| %>
+    2:   <% head.append do %>
+    3:     <%= csrf_meta_tags %>
+    4:   <% end %>
+  
+app/controllers/application_controller.rb:30:in `block in set_time_zone'
+app/controllers/application_controller.rb:30:in `set_time_zone'
+Started GET "/" for 127.0.0.1 at 2018-08-26 12:04:43 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmberCli::EmberController#index as HTML
+  Parameters: {"ember_app"=>:frontend}
+  Rendering /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb
+  Rendered /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb (4.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No `ember-cli` executable found for `frontend`.
+
+Install it:
+
+    $ cd /home/zimbar/code_projects/dnd_forum/forge/forge/frontend/amphitheatre
+    $ npm install
+
+):
+    1: <%= render_ember_app params[:ember_app] do |head| %>
+    2:   <% head.append do %>
+    3:     <%= csrf_meta_tags %>
+    4:   <% end %>
+  
+app/controllers/application_controller.rb:30:in `block in set_time_zone'
+app/controllers/application_controller.rb:30:in `set_time_zone'
+Started GET "/" for 127.0.0.1 at 2018-08-26 12:05:28 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmberCli::EmberController#index as HTML
+  Parameters: {"ember_app"=>:frontend}
+  Rendering /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb
+  Rendered /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.10.0/app/views/ember_cli/ember/index.html.erb (3.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No `ember-cli` executable found for `frontend`.
+
+Install it:
+
+    $ cd /home/zimbar/code_projects/dnd_forum/forge/forge/frontend/amphitheatre
+    $ npm install
+
+):
+    1: <%= render_ember_app params[:ember_app] do |head| %>
+    2:   <% head.append do %>
+    3:     <%= csrf_meta_tags %>
+    4:   <% end %>
+  
+app/controllers/application_controller.rb:30:in `block in set_time_zone'
+app/controllers/application_controller.rb:30:in `set_time_zone'
+Started GET "/" for 127.0.0.1 at 2018-08-26 12:14:10 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EmberCli::EmberController#index as HTML
+  Parameters: {"ember_app"=>:frontend}
+  Rendering /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.8.7/app/views/ember_cli/ember/index.html.erb
+  Rendering html template
+  Rendered html template (0.0ms)
+  Rendered /home/zimbar/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/ember-cli-rails-0.8.7/app/views/ember_cli/ember/index.html.erb (11531.2ms)
+Completed 200 OK in 11535ms (Views: 11534.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ember-welcome-page/images/construction.png" for 127.0.0.1 at 2018-08-26 12:14:23 -0400
