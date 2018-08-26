@@ -25,7 +25,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    assign_campaign_details
+    assign_campaign_attrs
     if @campaign.save
       flash[:alert] = 'Campaign successfully created!'
       redirect_to campaigns_url
@@ -36,7 +36,7 @@ class CampaignsController < ApplicationController
   end
 
   def update
-    assign_campaign_details
+    assign_campaign_attrs
     if @campaign.save
       flash[:alert] = 'Campaign successfully updated!'
       redirect_to campaign_url(@campaign)
@@ -52,7 +52,7 @@ class CampaignsController < ApplicationController
 
   private
 
-  def assign_campaign_details
+  def assign_campaign_attrs
     @campaign = params[:id] ? Campaign.find(params[:id]) : Campaign.new
     @campaign.user = current_user
     @campaign.title = params[:campaign][:title]
