@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      session[:user_id] = user.id
+      user_id = user.id
+      session[:user_id] = user_id
       redirect_to campaigns_url, notice: 'Logged in!'
-      cookies[:user_id] = user.id
+      cookies[:user_id] = user_id
     else
       flash.now[:notice] = 'Username or password is not correct.'
       render 'new'
