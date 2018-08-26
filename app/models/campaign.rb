@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# A campaign is the entire story of a game and all its contents
 class Campaign < ApplicationRecord
   belongs_to :user
 

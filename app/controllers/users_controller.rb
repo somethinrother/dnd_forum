@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls user actions
 class UsersController < ApplicationController
   def show
     @user = current_user
@@ -13,13 +14,8 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  # rubocop:disable Metrics/MethodLength
   def update
-    @user = current_user
-    @user.email = params[:user][:email]
-    @user.username = params[:user][:username]
-    @user.password = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
+    assign_user_attrs
     if @user.save
       # # Auto-login on succesful signup
       flash[:alert] = 'Account successfully updated!'
@@ -31,11 +27,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
-    @user.email = params[:user][:email]
-    @user.username = params[:user][:username]
-    @user.password = params[:user][:password]
-    @user.password_confirmation = params[:user][:password_confirmation]
+    assign_user_attrs
     if @user.save
       # # Auto-login on succesful signup
       flash[:alert] = 'Account successfully created!'
@@ -47,9 +39,18 @@ class UsersController < ApplicationController
       flash[:error] = 'There were errors in your account creation'
     end
   end
-  # rubocop:enable Metrics/MethodLength
 
   def destroy
     # TODO: Fill this in and add functionality
+  end
+
+  private
+
+  def assign_user_attrs
+    @user = current_user || User.new
+    @user.email = params[:user][:email]
+    @user.username = params[:user][:username]
+    @user.password = params[:user][:password]
+    @user.password_confirmation = params[:user][:password_confirmation]
   end
 end

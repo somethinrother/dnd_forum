@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# A character is owned by a user, and represents a character in a campaign
 class Character < ApplicationRecord
   belongs_to :user
   belongs_to :campaign

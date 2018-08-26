@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
+# Controls chapter actions
 class ChaptersController < ApplicationController
   def create
-    @campaign = Campaign.find(params[:campaign_id])
-    @chapter = Chapter.new
-    @chapter.campaign_id = @campaign.id
-    @chapter.title = params[:chapter][:title]
-    @chapter.description = params[:chapter][:description]
-
+    assign_chapter_attrs
     if @chapter.save
       respond_to do |format|
         format.html { redirect_to campaign_path(@campaign) }
@@ -24,5 +20,15 @@ class ChaptersController < ApplicationController
 
   def destroy
     # TODO: Fill this in and add functionality
+  end
+
+  private
+
+  def assign_chapter_attrs
+    @campaign = Campaign.find(params[:campaign_id])
+    @chapter = Chapter.new
+    @chapter.campaign_id = @campaign.id
+    @chapter.title = params[:chapter][:title]
+    @chapter.description = params[:chapter][:description]
   end
 end

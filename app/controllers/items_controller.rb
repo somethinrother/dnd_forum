@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controls item actions
 class ItemsController < ApplicationController
   def index; end
 
